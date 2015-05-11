@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -32,6 +32,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+  gem 'bootstrap-sass', '~> 3.3.4'
+  gem 'sprockets-rails', :require => 'sprockets/railtie'
+  gem 'bootswatch-rails'
+  gem 'simple_form'
+  
 	gem 'mysql2'
 	gem 'devise'
 	gem 'cancancan'

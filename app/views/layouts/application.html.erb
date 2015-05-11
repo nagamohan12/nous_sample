@@ -3,11 +3,31 @@
 <head>
   <title>Sample</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <h2><%= link_to 'Nous-Sample', applications_path%></h2>
+    </div>
+    <div id="navbar-main" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to 'Applications' ,applications_path%>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<%if user_signed_in?%>
+        	<li><%= link_to 'Logout', destroy_user_session_path, method: 'delete' %></li>
+        <%else%>
+        	<li><%= link_to 'Login', new_user_session_path, method: 'get' %></li>
+        <%end%>
+      </ul>
+    </div>
+  </div>
+</div>
 <%= yield %>
 
 </body>
